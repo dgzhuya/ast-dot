@@ -1,0 +1,17 @@
+<svg width="79pt" height="116pt" viewBox="0 0 79.41 116" xmlns="http://www.w3.org/2000/svg">
+    <g class="prefix__graph" transform="translate(4 112)">
+        <path fill="#fff" d="M-4 4v-116h79.41V4H-4z" />
+        <g class="prefix__node">
+            <ellipse fill="none" stroke="#000" cx="35.71" cy="-90" rx="32.49" ry="18" /><text text-anchor="middle"
+                x="35.71" y="-85.8" font-family="Times,serif" font-size="14">Hello</text>
+        </g>
+        <g class="prefix__node">
+            <ellipse fill="none" stroke="#000" cx="35.71" cy="-18" rx="35.71" ry="18" /><text text-anchor="middle"
+                x="35.71" y="-13.8" font-family="Times,serif" font-size="14">World</text>
+        </g>
+        <g class="prefix__edge">
+            <path fill="none" stroke="#000" d="M35.71-71.7v24.16" />
+            <path stroke="#000" d="M39.21-47.62l-3.5 10-3.5-10h7z" />
+        </g>
+    </g>
+</svg>

@@ -17,13 +17,13 @@
 	})
 
 	const sqlStr = ref(`SELECT
-	foo, bar as baz
-FROM
-	mytable
-WHERE
-	foo LIKE '%neat%' AND bar='aaa'
-ORDER BY
-	foo DESC`)
+		foo, bar as baz
+	FROM
+		mytable
+	WHERE
+		foo LIKE '%neat%' AND bar='aaa'
+	ORDER BY
+		foo DESC`)
 
 	const svgDom = ref<HTMLDivElement>()
 	const renderSvgImg = () => {
@@ -52,9 +52,14 @@ ORDER BY
 			}
 			if (cst === null) return
 			const genAstDot = cstVisitor({
-				select_stmt: ({ clauses }) => {
-					const pid = genASTNodeName('select_stmt')
-					clauses.forEach(c => (c.pid = pid))
+				select_stmt: ({ pid, clauses }) => {
+					let cid = 0
+					if (!pid) {
+						cid = genASTNodeName('select_stmt')
+					} else {
+						cid = gotoLine('select_stmt', pid) || 0
+					}
+					clauses.forEach(c => (c.pid = cid))
 				},
 				select_clause: ({ pid, selectKw, columns }) => {
 					const cid = gotoLine(selectKw.text, pid)

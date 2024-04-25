@@ -6,4 +6,3 @@
 <template>
 	<ASTDot />
 </template>
-
